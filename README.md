@@ -1,18 +1,18 @@
-## 📌 Project Description
+## Project Description
 
 The Expense Tracker App is designed to help users manage and monitor their financial activities. It provides a responsive interface to add, update, delete, and view expenses, while the backend handles business logic and data persistence.
 
 This project follows a **RESTful architecture** and demonstrates full stack development skills.
 
-## ✨ Features
+## Features
 
-- ➕ Add Expense
-- ✏️ Update Expense
-- ❌ Delete Expense
-- 📋 View All Expenses
-- 🔄 Real-time API Integration
-- 🎨 Responsive UI using Bootstrap
-- ⚠️ API Error Handling (basic)
+- Add Expense
+- Update Expense
+- Delete Expense
+- View All Expenses
+- Real-time API Integration
+- Responsive UI using Bootstrap
+- API Error Handling (basic)
 
 ## Tech Stack
 
