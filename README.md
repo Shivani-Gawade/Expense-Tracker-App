@@ -88,19 +88,18 @@ ExpenseTracker/
 cd Frontend/expensetrackerapp
 npm install
 npm run dev
+```
 
-Screenshots
-
+## Screenshots
 
 screenshots/
 ├── dashboard.png
 ├── add-expense.png
 ├── edit-expense.png
 
-
 ## Future Improvements
+
     JWT Authentication
-    Expense Analytics (Charts)
     Deployment (Frontend + Backend)
     Advanced Error Handling
     Improved UI/UX
@@ -109,4 +108,3 @@ screenshots/
 
 Shivani
 GitHub: https://github.com/Shivani-Gawade
-```
