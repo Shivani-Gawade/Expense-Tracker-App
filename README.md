@@ -106,5 +106,4 @@ screenshots/
 
 ## Author
 
-Shivani
-GitHub: https://github.com/Shivani-Gawade
+Shivani Gawade
