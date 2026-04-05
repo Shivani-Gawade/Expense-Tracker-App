@@ -1,0 +1,14 @@
+# React
+Frontend/expensetrackerapp/node_modules/
+Frontend/expensetrackerapp/build/
+
+# Spring Boot
+Backend/target/
+
+# IDE files
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
