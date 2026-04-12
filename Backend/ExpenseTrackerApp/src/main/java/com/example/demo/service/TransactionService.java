@@ -14,14 +14,12 @@ import com.example.demo.dto.Summary;
 public class TransactionService {
 
 	private final TransactionRepository repo;
-	private final UserRepository userRepository;
 	
 	
-	
-	public TransactionService(TransactionRepository repo, UserRepository userRepository) 
+	public TransactionService(TransactionRepository repo) 
 	{
 		this.repo = repo;
-		this.userRepository = userRepository;
+		
 	}
 
 	public Transaction save(Transaction tran)
@@ -40,10 +38,8 @@ public class TransactionService {
 	}
 
 	
-	public Transaction addTransaction(Transaction t, String email) 
+	public Transaction addTransaction(Transaction t) 
 	{
-        User user = userRepository.findByEmail(email).orElseThrow();
-        t.setUser(user);
         return repo.save(t);
     }
 	

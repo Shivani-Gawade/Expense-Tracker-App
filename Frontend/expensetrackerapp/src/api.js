@@ -16,9 +16,8 @@ export const signupUser = async (data) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  if (!res.ok) {
-    throw new Error("Signup failed");
-  }
+
+  if (!res.ok) throw new Error("Signup failed");
 
   return res.json();
 };
@@ -31,22 +30,29 @@ export const loginUser = async (data) => {
     body: JSON.stringify(data),
   });
 
+  if (!res.ok) throw new Error("Login failed");
+
   return res.json();
 };
 
 // ---------------- TRANSACTIONS ----------------
 
-// GET ALL USER TRANSACTIONS
+// GET ALL
 export const getTransactions = async () => {
   const user = getUser();
+
+  if (!user || !user.email) {
+    alert("User not logged in");
+    return [];
+  }
 
   const res = await fetch(`${TXN_URL}?email=${user.email}`);
   return res.json();
 };
 
-// ADD TRANSACTION
+// ADD
 export const addTransaction = async (data) => {
-  const user = getUser();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   await fetch(`${TXN_URL}?email=${user.email}`, {
     method: "POST",
@@ -55,18 +61,18 @@ export const addTransaction = async (data) => {
   });
 };
 
-// DELETE TRANSACTION
+// DELETE
 export const deleteTransaction = async (id) => {
-  const user = getUser();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   await fetch(`${TXN_URL}/${id}?email=${user.email}`, {
     method: "DELETE",
   });
 };
 
-// UPDATE TRANSACTION
+// UPDATE
 export const updateTransaction = async (id, data) => {
-  const user = getUser();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   await fetch(`${TXN_URL}/${id}?email=${user.email}`, {
     method: "PUT",
@@ -75,9 +81,14 @@ export const updateTransaction = async (id, data) => {
   });
 };
 
-// GET SUMMARY
+// SUMMARY
 export const getSummary = async () => {
   const user = getUser();
+
+  if (!user || !user.email) {
+    alert("User not logged in");
+    return {};
+  }
 
   const res = await fetch(`${TXN_URL}/summary?email=${user.email}`);
   return res.json();

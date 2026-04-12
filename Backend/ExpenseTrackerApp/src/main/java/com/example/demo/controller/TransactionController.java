@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.Summary;
@@ -24,48 +23,32 @@ public class TransactionController {
 
 	private final TransactionService service;
 
-	public TransactionController(TransactionService service) 
-	{
+	public TransactionController(TransactionService service) {
 		this.service = service;
 	}
-	
+
 	@GetMapping
-	public List<Transaction> getAllTransactions()
-	{
+	public List<Transaction> getAllTransactions() {
 		return service.getAll();
 	}
-	
-	
+
 	@PostMapping
-	public Transaction addTransaction(@RequestBody Transaction t, @RequestParam String email)
-	{
-		return service.addTransaction(t,email);
+	public Transaction addTransaction(@RequestBody Transaction t) {
+		return service.addTransaction(t);
 	}
-	
+
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long id)
-	{
+	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
-	
+
 	@GetMapping("/summary")
-	public Summary getSummary()
-	{
+	public Summary getSummary() {
 		return service.summary();
 	}
-	
+
 	@PutMapping("/{id}")
-	public  Transaction updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction)
-	{
+	public Transaction updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction) {
 		return service.update(id, transaction);
 	}
 }
-
-
-
-
-
-
-
-
-

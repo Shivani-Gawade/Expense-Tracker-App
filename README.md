@@ -90,12 +90,59 @@ npm install
 npm run dev
 ```
 
-## Screenshots
+## 📸 Screenshots
 
-screenshots/
-├── dashboard.png
-├── add-expense.png
-├── edit-expense.png
+### 🔐 Authentication
+
+#### Login Page
+
+![Login Page](screenshots/LoginPage.png)
+
+#### Register Page
+
+![Register Page](screenshots/registerPage.png)
+
+---
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/Dashboard.png)
+
+---
+
+### ➕ Add Expense
+
+#### Before Adding
+
+![Before Add](screenshots/before_transaction.png)
+
+#### After Adding
+
+![After Add](screenshots/after_transaction.png)
+
+---
+
+### ✏️ Update Expense
+
+#### Before Update
+
+![Before Update](screenshots/before_updateTransaction.png)
+
+#### After Update
+
+![After Update](screenshots/after_updateTransaction.png)
+
+---
+
+### ❌ Delete Expense
+
+#### Before Delete
+
+![Before Delete](screenshots/before_delete.png)
+
+#### After Delete
+
+![After Delete](screenshots/after_delete.png)
 
 ## Future Improvements
 
